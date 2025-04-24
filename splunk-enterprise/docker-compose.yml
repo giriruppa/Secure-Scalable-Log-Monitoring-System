@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  splunk:
+    image: splunk/splunk:latest
+    container_name: splunk-enterprise
+    environment:
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_PASSWORD=giridhar
+    ports:
+      - "8000:8000"    # Web UI
+      - "8088:8088"    # HTTP Event Collector
+      - "9997:9997"    # Forwarder data port
+    volumes:
+      - splunk_data:/opt/splunk/var
+
+volumes:
+  splunk_data:
