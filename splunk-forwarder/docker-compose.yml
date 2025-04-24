@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  forwarder:
+    image: splunk/universalforwarder:latest
+    container_name: splunk-forwarder
+    environment:
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_PASSWORD=giridhar
+      - SPLUNK_ADD=monitor /var/log
+      - SPLUNK_FORWARD_SERVER=20.169.202.24:9997
+    volumes:
+      - /var/log:/var/log
