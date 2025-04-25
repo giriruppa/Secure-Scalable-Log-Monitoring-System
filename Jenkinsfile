@@ -10,10 +10,11 @@ pipeline {
 
     stages {
         stage('Clone Repo') {
-            steps {
-                git 'https://github.com/giriruppa/log-monitoring-docker-splunk'
-            }
-        }
+    steps {
+        git branch: 'main', url: 'https://github.com/giriruppa/log-monitoring-docker-splunk'
+    }
+}
+
 
         stage('Start Splunk Enterprise on Azure') {
             steps {
