@@ -10,8 +10,7 @@ pipeline {
     stage('Deploy Splunk') {
       steps {
         dir('splunk-enterprise') {
-          bat 'docker-compose down'
-          bat 'docker-compose up -d'
+
         }
       }
     }
